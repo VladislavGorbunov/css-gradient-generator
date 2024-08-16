@@ -9,6 +9,15 @@ class Gradient {
         this.textDeg = document.querySelector('.text-deg')
         this.cssText = document.querySelector('.css-text')
         this.gradientText = document.querySelector('.gradient-text')
+        this.copyBtn = document.querySelector('.copy-btn')
+
+        this.copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(this.cssCopyText)
+            .then(() => {
+                alert('CSS скопирован')
+            }) 
+
+        })
 
         this.randomColorLeft = document.querySelector('.random-color-left')
         this.randomColorRight = document.querySelector('.random-color-right')
@@ -68,10 +77,12 @@ class Gradient {
 
 
     renderBg(deg, leftColor, rightColor) {
+        this.cssCopyText = `background: linear-gradient(${deg}deg, ${leftColor}, ${rightColor});`
         this.css = `<span style="color:#608efb">background:</span> 
         <span style="color:#26ba89">linear-gradient(</span><span style="color:#f25454">${deg}deg,</span>
         <span style="color:#ea811f"> ${leftColor}, ${rightColor}</span><span style="color:#26ba89">);</span>`
         this.gradientBlock.style.background = `linear-gradient(${deg}deg, ${leftColor}, ${rightColor})`
+
         this.cssText.innerHTML = '<i class="bi bi-filetype-css text-light"></i> ' + this.css
         this.textDeg.innerHTML = `Угол ${deg}&deg;`
     }
@@ -102,6 +113,7 @@ class Gradient {
             return hex + '4'
         }
     }
+
 
 }
 
