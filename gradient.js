@@ -16,7 +16,6 @@ class Gradient {
             .then(() => {
                 alert('CSS скопирован')
             }) 
-
         })
 
         this.randomColorLeft = document.querySelector('.random-color-left')
