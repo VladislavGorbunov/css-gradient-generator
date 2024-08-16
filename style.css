@@ -5,7 +5,12 @@ body {
     font-size: 16px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+    font-family: "Nunito", sans-serif;
+    font-weight: 1000;
+}
+
+h2, h3, h4, h5, h6 {
     font-family: "Nunito", sans-serif;
     font-weight: 600;
 }
@@ -13,5 +18,4 @@ h1, h2, h3, h4, h5, h6 {
 
 .random-color-right, .random-color-left {
     cursor: pointer;
-    background: linear-gradient(10deg, #112332, #52hh43);
 }

@@ -16,7 +16,7 @@ class Gradient {
         this.gradientBlock.style.width = options.width
         this.gradientBlock.style.height = options.height
         this.renderBg(this.rangeDeg.value, this.colorLeftInput.value, this.colorRightInput.value)
-        this.gradientBlock.innerHTML = '<h1>' + this.gradientText.value + '</h1>'
+        this.gradientBlock.innerHTML = '<h2>' + this.gradientText.value + '</h2>'
         this.listenerLeftColorInput()
         this.listenerRightColorInput()
         this.listenerRangeDeg()
@@ -25,7 +25,7 @@ class Gradient {
         this.randomColorRightLis()
 
         this.gradientText.addEventListener('input', () => {
-            this.gradientBlock.innerHTML = '<h1>' + this.gradientText.value + '</h1>'
+            this.gradientBlock.innerHTML = '<h2>' + this.gradientText.value + '</h2>'
         })
     }
 
@@ -94,7 +94,13 @@ class Gradient {
 
 
     randomColor() {
-        return Math.floor(Math.random() * 0xffffff).toString(16)
+        let hex = Math.floor(Math.random() * 0xffffff).toString(16)
+
+        if (hex.length == 6) {
+            return hex
+        } else {
+            return hex + '4'
+        }
     }
 
 }
