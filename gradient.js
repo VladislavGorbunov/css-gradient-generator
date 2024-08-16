@@ -18,7 +18,7 @@ class Gradient {
             }) 
         })
         
-        this.printText('CSS gradient generator from JavaScript')
+        this.printText('Hello, world! I am an online gradient generator for CSS')
         
 
         this.randomColorLeft = document.querySelector('.random-color-left')
