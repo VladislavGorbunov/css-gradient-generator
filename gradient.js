@@ -2,7 +2,7 @@ class Gradient {
 
     constructor(options) {
         this.gradientBlock = document.querySelector('.gradient-block')
-        
+        this.gradientBlockH1 = document.querySelector('.gradient-block-h1')
         this.colorLeftInput = document.querySelector('.color-left-input')
         this.colorRightInput = document.querySelector('.color-right-input')
         this.rangeDeg = document.querySelector('.range-deg')
@@ -17,6 +17,9 @@ class Gradient {
                 alert('CSS скопирован')
             }) 
         })
+        
+        this.printText('CSS gradient generator from JavaScript')
+        
 
         this.randomColorLeft = document.querySelector('.random-color-left')
         this.randomColorRight = document.querySelector('.random-color-right')
@@ -24,7 +27,7 @@ class Gradient {
         this.gradientBlock.style.width = options.width
         this.gradientBlock.style.height = options.height
         this.renderBg(this.rangeDeg.value, this.colorLeftInput.value, this.colorRightInput.value)
-        this.gradientBlock.innerHTML = '<h2>' + this.gradientText.value + '</h2>'
+        
         this.listenerLeftColorInput()
         this.listenerRightColorInput()
         this.listenerRangeDeg()
@@ -74,7 +77,6 @@ class Gradient {
     }
 
 
-
     renderBg(deg, leftColor, rightColor) {
         this.cssCopyText = `background: linear-gradient(${deg}deg, ${leftColor}, ${rightColor});`
         this.css = `<span style="color:#608efb">background:</span> 
@@ -84,6 +86,24 @@ class Gradient {
 
         this.cssText.innerHTML = '<i class="bi bi-filetype-css text-light"></i> ' + this.css
         this.textDeg.innerHTML = `Угол ${deg}&deg;`
+    }
+
+
+    printText(txt) {
+        let texts = txt
+        this.textArr = texts.split('')
+        
+        let text = 0
+    
+        let textPrint = setInterval(() => {
+            this.gradientText.value += this.textArr[text]
+            this.gradientBlockH1.innerHTML += this.textArr[text]
+            text++
+
+            if (text == this.textArr.length) {
+                clearInterval(textPrint)
+            }
+        }, 30)
     }
 
 
