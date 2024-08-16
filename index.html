@@ -23,12 +23,12 @@
             color: none;
             padding: 0;
             border: none;
-            border-radius: 30px;
+            
         }
     </style>
 
-    <header class="p-3 text-bg-light">
-        <div class="d-flex justify-content-center align-items-center flex-column">
+    <header class="text-bg-light">
+        <div class="d-flex justify-content-center align-items-center flex-column pt-3">
             <h1 class="text-center fs-2"><span style="color:#222">JS <i class="bi bi-palette" style="color:#24afbb"></i> GG</span></h1>
             <p><b>JavaScript Gradient Generator</b></p>
         </div>
@@ -46,26 +46,26 @@
         </div>
     
         <input type="text" class="gradient-text form-control form-control-lg mt-3" />
-        <div class="row mt-5">
-            <div class="col-12 col-xl-2 mt-2">
-                <label><input type="color" class="color-left-input d-block mx-auto" name="head" value="#353c8b" />
-                    <p class="mt-1"><b>Цвета слева</b></p>
-                </label>
-                <button class="random-color-left btn btn-success d-block"><i class="bi bi-arrow-counterclockwise"></i> Случайный
+
+
+        <div class="row mt-4">
+            <div class="col-6 col-xl-2 mb-2">
+                <input type="color" class="color-left-input d-block mx-auto" name="head" value="#353c8b" />
+                  <p class="mt-1 text-center"><b>Цвета слева</b></p>
+                <button class="random-color-left btn btn-success d-block mx-auto"><i class="bi bi-arrow-counterclockwise"></i> Случайный
                     цвет</button>
             </div>
 
-            <div class="col-12 col-xl-2 mt-2">
-                <label><input type="color" class="color-right-input d-block mx-auto" name="head" value="#24afbb" />
-                    <p class="mt-1"><b>Цвета справа</b></p>
-                </label>
-                <button class="random-color-right btn btn-success d-block"><i class="bi bi-arrow-counterclockwise"></i> Случайный
+            <div class="col-6 col-xl-2 mb-2">
+                <input type="color" class="color-right-input d-block mx-auto" name="head" value="#24afbb" />
+                    <p class="mt-1 text-center"><b>Цвета справа</b></p>
+                <button class="random-color-right btn btn-success d-block mx-auto"><i class="bi bi-arrow-counterclockwise"></i> Случайный
                     цвет</button>
             </div>
 
-            <div class="col-12 col-xl-3 mt-2">
-                <input type="range" class="range-deg" min="0" max="360" value="90" step="1" />
-                <label class="text-deg">Угол (deg)</label>
+            <div class="col-12 col-xl-3 mb-2 mt-3">
+                <input type="range" class="range-deg d-block mx-auto" min="0" max="360" value="90" step="1" />
+                <p class="text-deg text-center">Угол (deg)</p>
             </div>
 
         </div>
@@ -76,7 +76,7 @@
     <script>
         new Gradient({
             width: '100%',
-            height: '400px',
+            height: '350px',
         })
     </script>
 
